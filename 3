@@ -1,0 +1,40 @@
+import React, { useState } from "react";
+import { FiPower } from "react-icons/fi";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import Sidebar from "./Sidebar";
+
+const DashboardLayout = ({ children }) => {
+    const { url, component } = usePage()
+    const [showLogout, setShowLogout] = useState(false);
+    const handleShowLogout = () => {
+        setShowLogout(!showLogout);
+    };
+
+    const [showMenuTitle, setShowMenuTitle] = useState(false);
+    const handleShowMenuTitle = () => {
+        setShowMenuTitle(!showMenuTitle);
+    };
+
+    return (
+        <>
+            <div className="bg-green-100 min-h-screen w-64 fixed top-0 left-0">
+                {/*sidebar*/}
+            </div>
+            <div className="h-20 bg-red-500 left-64 right-0">
+                {/*topbar*/}
+                ok
+            </div>
+            <div className="absolute left-64 top-64 buttom-0 right-0 h-[1000px]  bg-red-50">
+                {/*mainContent*/}
+                <div className="flex">
+                    <div className="flex-grow">
+                        hi
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default DashboardLayout;
+
